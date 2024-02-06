@@ -440,4 +440,44 @@ def n_rotates_right(l, d):
     dq.rotate(d)  # positive means right rotate
     return list(dq)
 
+
 # print(n_rotates_right([1, 2, 3, 4, 5], 3))
+
+
+import string
+
+
+def func_check_splchar(s):
+    """ function checks if any spl chars present or not
+        if spl chars present it will return true otherwise
+        it return false
+    """
+    # if s.isalnum():
+    #     return False
+    # else:
+    #     return True
+    return not s.isalnum()
+    #  isalnum means both numbers and charectors present or not it will check
+
+
+print(func_check_splchar("reddy@#12"))
+print(func_check_splchar("reddy123"))
+
+
+def func_return(s):
+    """
+    This  function will return how many alpha charectors, how many digits,
+    how many spl charectors
+    """
+    d = {"alpha": 0, "digit": 0, "spl": 0}
+    for i in s:
+        if i.isalpha():  # it will check is it charector present or not
+            d["alpha"] = d["alpha"] + 1
+        elif i.isdigit():  # it will check is it digit present or not
+            d["digit"] = d["digit"] + 1
+        else:
+            d["spl"] = d["spl"] + 1
+    return d
+
+
+print(func_return("reddy123@#$"))
